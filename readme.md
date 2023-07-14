@@ -1,6 +1,6 @@
 <p align="center">
   <h1 align="center">JSON Transformer</h1>
-  <p align="center">A simple Node.js script to transform JSON data into a different structure. This script is particularly useful for flattening nested JSON arrays and mapping them into a new structure</p>
+  <p align="center">A simple Node.js script to transform JSON data into a different structure. This script is particularly useful for flattening nested JSON arrays and mapping them into a new structure.</p>
 </p>
 
 ## 🚀 Getting Started
