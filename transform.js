@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const moment = require('moment');
 
 // Define the input file and output directory
 const inputFile = 'C:\\Users\\Fonck\\Documents\\UCI\\Consultoria Blockchain\\Info-certificaciones\\Fundamentos-del-Enfoque-Ecosistemico.json';
@@ -12,13 +13,19 @@ const originalData = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
 const flattenedData = originalData.flat();
 
 // Transform the data
-const transformedData = flattenedData.map(student => ({
-    Name: student[0],
-    Email: student[1],
-    Date: student[2],
-    Institution: student[3],
-    Code: student[4]
-}));
+const transformedData = flattenedData.map(student => {
+    // Parse and reformat the date
+    const date = moment(student[2], 'dddd, D [de] MMMM [de] YYYY, HH:mm', 'es');
+    const formattedDate = date.format('DD/MM/YYYY');
+
+    return {
+        Name: student[0],
+        Email: student[1],
+        Date: formattedDate,
+        Institution: student[3],
+        Code: student[4]
+    };
+});
 
 // Get the name of the input file without extension
 const inputFileName = path.basename(inputFile, path.extname(inputFile));
