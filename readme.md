@@ -25,7 +25,7 @@ git clone https://github.com/fonckchain/json-transformer.git
 3. Run the script with:
 
 ```bash
-Node.js transform.js
+node transform.js
 ```
 
 ## 📄 License
